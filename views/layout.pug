@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+      head
+        title Daily Motivational Quotes
+        style
+             include ../public/quotes.css
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk', crossorigin='anonymous')
+        link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
+        meta(type='viewport', content='device=width-device')
+      body#background
+        .container.shadow.p-3.mb-5.bg-white.rounded
+          include ../views/changingQuotes.pug
+        #darkBlueBackground
+          p.opening-question.mx-auto Need some inspiration to get the day started?
+          p.subscribe-note.mx-auto Subscribe to recieve daily motivational quotes
+          block content
+
+
+script
+      include ../vanillaQuotes.js

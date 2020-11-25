@@ -1,0 +1,51 @@
+{
+  "name": "quotes-site",
+  "homepage": "https://quotes-site.herokuapp.com/",
+  "version": "1.0.0",
+  "engines": {
+    "node": "15.1.0",
+    "npm": "7.0.9"
+  },
+  "description": "\"\"",
+  "main": "quotes.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.0",
+    "connect": "^3.7.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "email-templates": "^7.1.0",
+    "es6-promise": "^4.2.8",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "forever": "^3.0.2",
+    "forever-monitor": "^3.0.1",
+    "fs": "0.0.1-security",
+    "isomorphic-fetch": "^2.2.1",
+    "method-override": "^3.0.0",
+    "mysql": "^2.18.1",
+    "nedb": "^1.8.0",
+    "node-cron": "^2.0.3",
+    "node-fetch": "^2.6.0",
+    "node.js": "^0.0.1-security",
+    "nodemailer": "^6.4.10",
+    "nodemon": "^2.0.4",
+    "pm2": "^4.5.0",
+    "pug": "^3.0.0",
+    "requirejs": "^2.3.6",
+    "sendgrid": "^5.2.3",
+    "stringz": "^2.1.0"
+  },
+  "scripts": {
+    "start": "nodemon quotes.js"
+  },
+  "keywords": [
+    "[]"
+  ],
+  "author": "\"\"",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://git.heroku.com/quotes-site.git"
+  }
+}

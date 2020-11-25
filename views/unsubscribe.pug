@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+      head
+        title Daily Motivational Quotes - Subscription
+        style
+             include ../public/email-template.css
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk', crossorigin='anonymous')
+        link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
+        meta(type='viewport', content='device=width-device')
+      body
+        .mx-auto#sad-girl-container
+          img.sad-girl(src="../images/sad-girl.png", alt="sad girl")
+        if message
+          .mx-auto(style="width:400px;")
+            p.successful-unsubscription= message
+        else
+          .mx-auto#sorry-container
+            h1.sorry Sorry to see you go!
+            p.survey Please take a moment to tell us why you unsubscribed:
+          form(method='POST' action='/successfully-unsubscribed/'+ id)
+            .form-check.mx-auto(style="width:400px;")
+              input(class="form-check-input" name="firstOption" type="checkbox" value="I no longer wish to recieve emails" id="defaultCheck1")
+              label.form-check-label(for="defaultCheck1") I no longer wish to recieve emails
+              input(class="form-check-input" name="secondOption" type="checkbox" value="I never signed up for this email list" id="defaultCheck1")
+              label.form-check-label(for="defaultCheck2") I never signed up for this email list
+              input(class="form-check-input" name="thirdOption" type="checkbox" value="The emails look like spam" id="defaultCheck1")
+              label.form-check-label(for="defaultCheck3") The emails look like spam
+              input(class="form-check-input" name="fourthOption" type="checkbox" value="Inappropriate Content" id="defaultCheck1")
+              label.form-check-label(for="defaultCheck4") Inappropriate content
+            .mx-auto(style="width:520px;")  
+              label(for="exampleFormControlTextarea1").other Other (Please fill in the blank):
+              textarea.form-control#exampleFormControlTextarea1(type="text" name="other" rows="3")
+            .mx-auto(style="width:250px;")  
+              button(type="submit").unsubscribe-button Unsubscribe
+
+script 
+  include ../quotes.js
