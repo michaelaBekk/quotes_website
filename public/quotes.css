@@ -255,3 +255,9 @@ label[for="exampleInputEmail1"] {
        left:600px;
     }
 }
+
+@media(min-width:1601px) {
+    .image {
+       left:1100px;
+    }
+}

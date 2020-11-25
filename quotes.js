@@ -51,20 +51,16 @@ app.use((err, req, res, next) => {
   res.status(500).render('error', {serverError:500});
 });
 
+// Config File
+var data = require('./config');
 
 //My SQL
 var mySql = require('mysql');
 
-var mySqlDb = mySql.createConnection({
-    user: "doadmin",
-    password: "Wh1plash!",
-    host: "art-site-mysql-do-user-8265594-0.b.db.ondigitalocean.com",
-    database: "defaultdb",
-    port: "25060",
-    sslmode: "REQUIRED",
-    multipleStatements: true
-});
-  
+var mySqlDb = mySql.createConnection(
+    data[0]
+);
+
 mySqlDb.connect(function(err) {
     if (err) {
         console.log(err, 'Failed to connect to database')
@@ -108,13 +104,9 @@ app.post('/', [
           }else {
              // Send Confirmation Email
             res.render('submit', {email:req.body});
-            let transporter = nodemailer.createTransport({
-              service:'gmail',
-              auth: {
-                user:'dailymotivationalquotestoday@gmail.com',
-                pass:'Wh1plash!'
-              }
-            });
+            let transporter = nodemailer.createTransport(
+              data[1]
+            );
     
               const emailOptions = {
                 from: {

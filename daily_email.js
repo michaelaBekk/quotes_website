@@ -18,22 +18,18 @@ const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
 // Express Validator 
-const {check, validationResult} = require('express-validator');
 const pug = require('pug');
 app.set('view engine', 'pug');
+
+// Config File
+var data = require('./config');
 
 //My SQL
 var mySql = require('mysql');
 
-var mySqlDb = mySql.createConnection({
-    user: "doadmin",
-    password: "Wh1plash!",
-    host: "art-site-mysql-do-user-8265594-0.b.db.ondigitalocean.com",
-    database: "defaultdb",
-    port: "25060",
-    sslmode: "REQUIRED",
-    multipleStatements: true
-});
+var mySqlDb = mySql.createConnection(
+    data[0]
+);
   
 mySqlDb.connect(function(err) {
     if (err) {
@@ -85,13 +81,10 @@ const cron = require('node-cron');
               value.User_ID
             ]
           });
-            let transporter = nodemailer.createTransport({
-              service:'gmail',
-              auth: {
-                user:'dailymotivationalquotestoday@gmail.com',
-                pass:'Wh1plash!'
-              }
-            });
+          
+            let transporter = nodemailer.createTransport(
+                data[1]
+            );
       
               const emailOptions = {
                 from: {
