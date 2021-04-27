@@ -4,14 +4,14 @@ block content
     if email_exists
         form(method='post', action='/').form-group.mx-auto(style="width:450px;")
             label(for="exampleInputEmail1") Email Address
-                input(type='email', name='email', required)#exampleInputEmail1.form-control 
-                p.email-exists This email is already subscribed to recieve daily motivation quotes.
+                input(type='email', name='email', required)#exampleInputEmail1.form-control.mt-4
+                p.small-font This email is already subscribed to recieve daily motivation quotes.
             button(type='submit').btn.btn-primary Subscribe 
     else if email
-        p.thank-you.position-relative.mx-auto(style="width:400px;") Thank you for subscribing!
+        p.bg-font.position-relative.mx-auto(style="width:400px;") Thank you for subscribing!
             span.material-icons sentiment_satisfied_alt
     else
         form(method='post', action='/').form-group.mx-auto(style="width:450px;")
             label(for="exampleInputEmail1") Email Address
-                input(type='email', name='email', required)#exampleInputEmail1.form-control 
-            button(type='submit').btn.btn-primary Subscribe 
+                input(type='email', name='email', required)#exampleInputEmail1.form-control.mt-4
+            button(type='submit').small-font.mt-5 Subscribe 

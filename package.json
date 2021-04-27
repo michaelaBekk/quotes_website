@@ -37,7 +37,7 @@
     "stringz": "^2.1.0"
   },
   "scripts": {
-    "start": "nodemon quotes.js"
+    "start": "nodemon index.js"
   },
   "keywords": [
     "[]"

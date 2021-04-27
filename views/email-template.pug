@@ -1,25 +1,24 @@
 doctype html
 html(lang="en")
       head
-        title Document
+        title Daily Motivational Quote
         style
-             include ../public/email-template.css
+             include ../public/quotes.css
         link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk', crossorigin='anonymous')
         link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
         meta(type='viewport', content='device=width-device')
-      body
-        #background
-          p.quote= ' " ' + quote + ' " '
-          if author !== null
-            p.author= '-' + author
-          else 
-            p.author= ''
-          img.flowers(src="cid:flowerdesign@blah")
-          p.signature Daily Motivational Quotes
-        footer
-          p.no-reply This email was sent from a notification-only address that cannot accept incoming email. Please do not reply to this message.
-          p.leaving-question Got your life together?
-            a(href="https://quotes-site.herokuapp.com/unsubscribe/" + id).unsubscribe Unsubscribe.
+      body.background.container
+        h2.mt-5 Daily Motivational Quotes
+        h3.mt-5= ' " ' + quote + ' " '
+        if author !== null
+          span= '-' + author
+        else 
+          span= ''
+        footer.text-center.mt-5
+          p This email was sent from a notification-only address that cannot accept incoming email. Please do not reply to this message.
+          p No longer wish to recieve emails? 
+            br
+            a(href="/unsubscribe/" + id).unsubscribe Unsubscribe.
 
 script
-      include ../quotes.js
+    include ../index.js
